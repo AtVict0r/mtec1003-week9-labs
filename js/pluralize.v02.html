@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluralize</title>
+</head>
+<body>
+    <script>
+        function pluralize(word) {
+            if (word.search(/[^A-Za-z]/) === -1) {
+                /** 
+                 * When the variable 'word' is searched for anything that is NOT in the partern '/[^A-Za-z]' (an uppercase or lowercase letter).
+                 * The search method returns a number, which is the index of the first occurrence of the search string.
+                 * The search method returns -1 if the search string is not found. 
+                **/
+                if (word.endsWith('y')) {
+                    return word.slice(0, -1) + 'ies';
+                } else if (word.endsWith('s')) {
+                    return word + 'es';
+                } else if (word.toLowerCase() === 'moose') {
+                    return word;
+                } else if (word.toLowerCase() === 'mouse') {
+                    return 'mice';
+                } else if (word.toLowerCase() === 'automaton') {
+                    return 'automata';
+                } else {
+                    return word + 's';
+                }
+            } else {
+                return 'That\'s not a word!';
+            }
+        }
+
+        wordToPluralize = prompt('Enter a word please:');
+        pluralizedWord = pluralize(wordToPluralize);
+        console.log(pluralizedWord);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <script>
+        function factorial(n) {
+            var total = 1;
+
+            for(var i = 0; i < n; i++) {
+                total *= (n-i);
+                console.log("Current i: " + i + ", Current total: " + total);
+            }
+
+            return total; // Return final value of total at the end of the loop
+        }
+
+        var factorialNumber = parseInt(prompt("Enter a number to find its factorial:"), 10);
+        var result = factorial(factorialNumber);
+        console.log("The factorial of " + factorialNumber + " is " + result);
+    </script>
+</body>
+</html>
